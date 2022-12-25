@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32519.379
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AoOS", "AoOS\AoOS.csproj", "{DA466DE6-ADF3-4430-9FDA-01813703864B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA466DE6-ADF3-4430-9FDA-01813703864B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA466DE6-ADF3-4430-9FDA-01813703864B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA466DE6-ADF3-4430-9FDA-01813703864B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA466DE6-ADF3-4430-9FDA-01813703864B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CE018776-A81A-4742-A38E-44B546FE7CCC}
+	EndGlobalSection
+EndGlobal
