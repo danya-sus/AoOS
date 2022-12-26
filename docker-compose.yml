@@ -13,7 +13,7 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "5001:80"
+      - "5050:80"
     environment:
       ConnectionStrings:DatabaseContext: "Host=postgres_image;Port=5432;Username=admin;Password=password;Database=aoos"
     networks: 
