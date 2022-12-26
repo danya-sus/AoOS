@@ -8,22 +8,25 @@ namespace AoOS.Controllers
     [Route("{controller}")]
     public class VehicleController : ControllerBase
     {
-        private HttpClient _client;
         private IVehicleRepository _repository;
+        private ILogger _logger;
 
-        public VehicleController(IVehicleRepository repository)
+        public VehicleController(IVehicleRepository repository, ILogger<VehicleController> logger)
         {
-            _client = new HttpClient();
-            _client.BaseAddress = new Uri(Environment.GetEnvironmentVariable("URI_ENV") ?? string.Empty);
-            _client.DefaultRequestHeaders.Accept.Add(
-                new MediaTypeWithQualityHeaderValue("application/json"));
-
             _repository = repository;
+            _logger = logger;
+        }
+
+        [HttpGet("home")]
+        public IActionResult Home()
+        {
+            return Ok("Its alive!");
         }
 
         [HttpGet("vehicles")]
         public IActionResult GetVehicles()
         {
+            _logger.LogInformation("GET VEHICLES ...");
             return Ok(_repository.GetAll());
         }
 

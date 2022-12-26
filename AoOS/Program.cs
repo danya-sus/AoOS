@@ -9,9 +9,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddScoped<IVehicleRepository, VehicleRepository>();
 builder.Services.AddSwaggerGen();
 
-var connectionString = builder.Configuration.GetConnectionString("DatabaseContext");
 builder.Services.AddDbContext<VehicleContext>(options =>
-    options.UseNpgsql(connectionString));
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DatabaseContext")));
 
 var app = builder.Build();
 

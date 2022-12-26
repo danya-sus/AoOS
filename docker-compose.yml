@@ -15,25 +15,24 @@ services:
     ports:
       - "5001:80"
     environment:
-      ConnectionStrings:DatabaseContext: "Host=postgres_image;Port=5433;Database=aoos;Username=admin;Password=pass"
+      ConnectionStrings:DatabaseContext: "Host=postgres_image;Port=5432;Username=admin;Password=password;Database=aoos"
     networks: 
       - dockerapi-dev
 
   postgres_image:
     image: postgres:latest
     ports:
-      - "5433"
+      - "5432:5432"
     restart: always
     volumes:
-      - ./dbscripts/data_all.sql:/docker-entrypoint-initdb.d/data_all.sql
-      - .:/var/lib/postgresql/data
+      - ./dbscripts/CreateTables.sql:/docker-entrypoint-initdb.d/CreateTables.sql
     environment:
       POSTGRES_USER: "admin"
-      POSTGRES_PASSWORD: "pass"
+      POSTGRES_PASSWORD: "password"
       POSTGRES_DB: "aoos"
       PGDATA: "/var/lib/postgresql/data/pgdata"
-    networks:
-    - dockerapi-dev
+    networks: 
+      - dockerapi-dev
     
 volumes:
   dbscripts:

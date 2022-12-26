@@ -4,7 +4,7 @@ namespace AoOS.Repositories
 {
     public interface IVehicleRepository
     {
-        public IEnumerable<Vehicle> GetAll();
-        public Vehicle Get(string id);
+        IEnumerable<Vehicle> GetAll();
+        Vehicle Get(string id);
     }
 }
